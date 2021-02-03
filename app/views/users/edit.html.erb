@@ -1,0 +1,18 @@
+<% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+    
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "example@example.com" %> 
+    <%= f.label :username, "Your Username Here:" %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "password" %>
+
+    <%= f.submit %>
+
+<% end %>
