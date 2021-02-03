@@ -1,18 +1,8 @@
-<% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= form_with model: @user do |f| %>
+<%= f.email_field :email, placeholder: "Email", value: @user.email %><br /> <br/>
 
-    
-    <%= f.label :email %>
-    <%= f.text_field :email, placeholder: "example@example.com" %> 
-    <%= f.label :username, "Your Username Here:" %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder: "password" %>
-
-    <%= f.submit %>
-
+<%= f.text_field :username, placeholder: "Username", value: @user.username %><br /> <br/>
+<%= f.password_field :password, placeholder: "Password" %><br /> <br/>
+<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br /> <br/>
+<%= f.submit "Submit" %>
 <% end %>
